@@ -1,0 +1,57 @@
+<!--
+  ###### Anotaciones ########
+  floatLabel          .- Para que el texto en <mat-label> se ponga flotante se puede optar por 3 tipos
+                        floatLabel = "never/always/auto"
+  required           .- Cuando se pone el required dentro de la etiqueta input en el <mat-label> va aparecer un *.
+  hideRequiredMarker .- Para ocultar el *, debe ir dentro del <mat-form-field
+  align              .- Alinear, puede tomar estos valores end/start
+  appearance         .- Cambia la apariencia del input, puede tomar los siguientes valores; appearance="legacy/standard"
+
+
+-->
+
+<div class="card-login">
+  <mat-card class="card-content">
+    <mat-card-content>
+      <img src="../../../assets/img/logo.png" alt="" class="logoImg">
+          <p>
+            <mat-form-field floatLabel="always" hideRequiredMarker appearance="fill" color="warn">
+              <mat-label>Nombre's</mat-label>
+              <input matInput required>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field floatLabel="auto" hideRequiredMarker appearance="standard">
+              <mat-label>Apellidos</mat-label>
+              <input matInput required>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field floatLabel="never" hideRequiredMarker appearance="fill">
+              <mat-label>Usuario</mat-label>
+              <input matInput required>
+              <mat-hint>Minimo 5 carácteres</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field floatLabel="never" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput required type="password">
+              <mat-hint align="end">Minimo 8 carácteres</mat-hint>
+            </mat-form-field>
+          </p>
+    </mat-card-content>
+
+    <mat-grid-list cols="2" rowHeight="40px">
+      <mat-grid-tile>
+        <button mat-raised-button color="primary" class="btnLogin" >Guardar</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn" class="btnLogin" [routerLink]="'/regresar'" routerLinkActive="router-link-active" >Regresar</button>
+
+        <!-- <button mat-raised-button color="warn" class="btnLogin" [routerLink]="'/register'" routerLinkActive="router-link-active">Registrarse</button> -->
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card>
+</div>

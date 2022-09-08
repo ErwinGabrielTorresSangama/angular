@@ -1,0 +1,74 @@
+<div class="card-login">
+  <mat-card class="card-content">
+
+    <mat-card-content>
+      <img src="../../../assets/img/logo.png" alt="" class="logoImg">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Ingrese usuario" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+            class="inputLogin" />
+          <mat-icon matSuffix>person_pin</mat-icon>
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Por favor debe ingresar el correo
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Campo <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Ingrese password" [type]="hide ? 'password' : 'text'"
+            [errorStateMatcher]="matcher" [formControl]="emailFormControl">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint>Errors appear instantly!</mat-hint>
+
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Por favor debe ingresar el correo
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Campo <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <a href="">
+          <mat-label>Olvide mi contraseña</mat-label>
+        </a>
+      </p>
+
+<!--
+      <div class="row">
+          <div class="col mb-2">
+            <button mat-raised-button color="primary" class="">Acceder</button>
+          </div>
+          <div class="col">
+            <button mat-raised-button color="warn" class="">Registrar</button>
+          </div>
+      </div> -->
+    </mat-card-content>
+
+    <mat-grid-list cols="2" rowHeight="40px">
+      <mat-grid-tile>
+        <button mat-raised-button color="primary" (click)="onClickLogin();" class="btnLogin">Ingresar</button>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn" class="btnLogin" (click)="onClickRegistrar()">Registrarse</button>
+
+        <!-- <button mat-raised-button color="warn" class="btnLogin" [routerLink]="'/register'" routerLinkActive="router-link-active">Registrarse</button> -->
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-card>
+</div>
+
+
+
