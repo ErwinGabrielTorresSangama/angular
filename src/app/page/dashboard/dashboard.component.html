@@ -1,5 +1,13 @@
-<app-navbar></app-navbar>
-<mat-sidenav-container>
-  <mat-sidenav>MENU</mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
-</mat-sidenav-container>
+<div class="dashboard">
+	<app-navbar></app-navbar>
+	<mat-drawer-container class="drawer" autosize>
+		<mat-drawer #drawer mode="side" opened>
+			<app-sidenav></app-sidenav>
+		</mat-drawer>
+
+		<div class="sidenav-content">
+      <h1>Bienvenido</h1>
+			<router-outlet></router-outlet>
+		</div>
+	</mat-drawer-container>
+</div>

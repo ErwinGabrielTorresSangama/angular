@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
 
-  constructor() { }
+  constructor(private _router: Router) {}
+	listMenu = [
+		{ name: 'pokemons', path: '/dashboard/pokemons', icon: 'account_circle' },
+		{ name: 'Metabots', path: '/dashboard/metabots', icon: 'star_rate' },
+		{ name: 'Digimons', path: '/dashboard/digimons', icon: 'article' }
+	];
 
-  ngOnInit(): void {
-  }
+	logout(): void {
+		void this._router.navigateByUrl('login');
+	}
+
+
+
+
 
 }

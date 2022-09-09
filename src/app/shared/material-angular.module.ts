@@ -9,9 +9,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     FlexLayoutModule,
     MatToolbarModule,
     MatGridListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
 
   ]
 })

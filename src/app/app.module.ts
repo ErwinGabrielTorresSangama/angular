@@ -9,11 +9,14 @@ import { MaterialAngularModule } from './shared/material-angular.module';
 import { AuthModule } from './shared/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './shared/dashboard.module';
-
+import { DigimonsComponent } from './page/digimons/digimons.component';
+import { MetabotsComponent } from './page/metabots/metabots.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DigimonsComponent,
+    MetabotsComponent,
   ],
   imports: [
     BrowserModule,

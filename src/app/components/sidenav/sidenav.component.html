@@ -1,1 +1,38 @@
-<p>sidenav works!</p>
+<!-- <mat-toolbar color="primary">
+  <span>My App</span>
+  <button mat-button (click)="opened=!opened">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]='opened' mode="push">
+    <a href="#">Home</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    End
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+<div class="menu">
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let menu of listMenu" routerLinkActive="active" [routerLink]="menu.path" isActive>
+      <mat-icon matListIcon>{{ menu.icon }}</mat-icon>
+      <a routerLinkActive="router-link-active"> {{ menu.name }}</a>
+    </mat-list-item>
+
+    <mat-list-item role="listitem" (click)="logout()">
+      <mat-icon matListIcon>logout</mat-icon>
+      Logout
+    </mat-list-item>
+  </mat-nav-list>
+</div>

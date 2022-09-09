@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { RegisterPageComponent } from './page/register-page/register-page.component';
-import { DashboardComponent } from './page/dashboard/dashboard.component';
 
 
 export const routes:Routes = [
@@ -19,8 +18,9 @@ export const routes:Routes = [
     component:LoginPageComponent
   },
   {
+    //Cuando me dirijo a dashboard, lo que hace es que como dahsboard tiene su propio sistema de rutas, lo que va realizar es cargarme el sistema de rutas del dashboard, que para el sistema de rutas va ser vacio, y me va pintar lo que hay dentro del component dashboard
     path: 'dashboard',
-    component:DashboardComponent
+    loadChildren: () => import('./page/dashboard/dashboard-routing.module').then((m)=>m.DashboardRoutingModule)
   },
   {
     path: '',
